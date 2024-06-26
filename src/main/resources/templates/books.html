@@ -1,0 +1,20 @@
+<!-- books.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Library Management System - Books</title>
+</head>
+<body>
+<h1>Search Books</h1>
+<form th:action="@{/books}" method="get">
+    <input type="text" name="title" placeholder="Search by title"/>
+    <button type="submit">Search</button>
+</form>
+<h2>Search Results</h2>
+<ul>
+    <li th:each="book : ${books}">
+        <span th:text="${book.title}"></span> by <span th:text="${book.author}"></span>
+    </li>
+</ul>
+</body>
+</html>
